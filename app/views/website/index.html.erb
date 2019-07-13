@@ -1,8 +1,8 @@
 <%= form_tag donate_path, id: "donate" do %>
 
-  <p>Pick a charity:</p>
+  <p>Pick a charity: <%= button_tag "Random Pick!", type: "button", id: "random_pick" %></p>
 
-  <ul>
+  <ul id="charity_list">
     <% @app.all_charities.each do |charity| %>
       <li>
         <%= radio_button_tag :charity, charity.id %>

@@ -1,5 +1,14 @@
 $(document).on("ready", function () {
 
+  // Random Pick Button
+  $('#random_pick').click(function(){
+    var count = $('#charity_list li input').length;
+    var rand  = 1 + Math.floor( Math.random() * count );
+
+    $('#charity_list li input').removeClass('checked');
+    $('#charity_' + rand).prop('checked', true);
+  });
+
   $("#donate").submit(function () {
 
     var form = $(this);
